@@ -1,0 +1,53 @@
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import YouTube from 'react-youtube';
+
+import './styles.css';
+
+// #share link
+// https://youtu.be/_nBlN9yp9R8
+// # url link
+// https://www.youtube.com/watch?v=_nBlN9yp9R8
+
+export default class Index extends Component {
+    
+    state = {
+        videoId: '_nBlN9yp9R8',
+    }
+
+    videoOnReady(event) {
+        // access to player in all event handlers via event.target
+        // event.target.pauseVideo();
+        console.log(event.target);
+        }
+
+    render(props) {
+
+        const {videoId} = this.state;
+
+        const opts = {
+            // não precisamos colocar propriedades de tamanho porque fazemos isso com css, mas é possível.
+            // de qualquer forma, o css obrepõe essas propriedades
+            height: '30',
+            width: '30',
+            playerVars: {
+                // https://developers.google.com/youtube/player_parameters
+                autoplay: 0,
+            },
+        };
+
+    return (
+        <div className="app">
+            <ul>
+            <li>
+                <Link to="/">index</Link>
+            </li>
+        </ul>
+
+        <YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady} className="video" ></YouTube>
+        
+        </div>
+      );
+    }
+   
+}
