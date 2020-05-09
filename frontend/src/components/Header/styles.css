@@ -3,6 +3,8 @@ header {
     height: 50px;
     width: 100%;
     background: #703e156e;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.40); /* 0: quantos pixels pra direita, 1px: verticalmente, 3px: dissipação */
     
 }
 

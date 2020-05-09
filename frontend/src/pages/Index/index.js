@@ -25,10 +25,17 @@ export default class Index extends Component {
                     </article>
 
                     <h2>Músicas</h2>
+
+                    <article>
+                        <strong>Andei Só</strong>
+                        <p>Música • Natiruts • Álbum Aleatório • 4:58</p>
+
+                        <Link to={`/yt`} >Acessar</Link>
+                    </article>
                     
                     <article>
-                        <strong>Natiruts</strong>
-                        <p>Artista</p>
+                        <strong>Sorri, Sou Rei</strong>
+                        <p>Música • Natiruts • Box Natiruts • 4:58</p>
 
                         <Link to={`/yt`} >Acessar</Link>
                     </article>
@@ -36,8 +43,8 @@ export default class Index extends Component {
                     <h2>Artistas</h2>
 
                     <article>
-                        <strong>Andei Só</strong>
-                        <p>Música</p>
+                        <strong>Natiruts</strong>
+                        <p>Artista</p>
 
                         <Link to={`/yt`} >Acessar</Link>
                     </article>
