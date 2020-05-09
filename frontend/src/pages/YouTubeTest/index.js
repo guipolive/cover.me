@@ -44,7 +44,11 @@ export default class Index extends Component {
             </li>
         </ul>
 
-        <YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady} className="video" ></YouTube>
+
+        <div className="video-box">
+            <YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady} className="video" ></YouTube>
+        </div>
+        
         
         </div>
       );

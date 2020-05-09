@@ -1,32 +1,64 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './styles.css';
 
-import { FiMenu, FiPlusSquare, FiBell, FiUser } from 'react-icons/fi';
+import { FiMenu, FiPlusSquare, FiBell, FiUser, FiHome } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 
 // import logoImg from '../../assets/logo.jpeg';
 
-const Header = () => (
-    <header>
-        <IconContext.Provider value={{className:"icones-header"}} >
-            <div className="content">
-                <ul>
-                    <li><FiMenu/></li>
-                    <li>logo</li>
-                </ul>
+export default class Header extends Component {
 
-                <div className="search-bar">
-                    <input type="text" placeholder="Pesquisar"/>
-                </div>
+    handleClickUser(){
+        console.log('teste');
+    }
 
-                <ul>
-                    <li><FiPlusSquare/></li>
-                    <li><FiBell/></li>
-                    <li><FiUser/></li>
-                </ul>
-            </div>
-        </IconContext.Provider>
-    </header>
-);
+    render() {
+        return(
+            <header>
+                <IconContext.Provider value={{className:"icones-header"}} >
+                    <div className="content">
+                        <ul>
+                            <li><FiMenu/></li>
+                            <li><FiHome/></li>
+                        </ul>
 
-export default Header;
+                        <div className="search-bar">
+                            <input type="text" placeholder="Pesquise um cover, música ou artista"/>
+                        </div>
+
+                        <ul>
+                            <li><FiPlusSquare/></li>
+                            <li><FiBell/></li>
+                            <li><FiUser onClick={this.handleClickUser}/></li>
+                        </ul>
+                    </div>
+                </IconContext.Provider>
+            </header>
+        )
+    }
+}
+
+// const Header = () => (
+//     <header>
+//         <IconContext.Provider value={{className:"icones-header"}} >
+//             <div className="content">
+//                 <ul>
+//                     <li><FiMenu/></li>
+//                     <li>logo</li>
+//                 </ul>
+
+//                 <div className="search-bar">
+//                     <input type="text" placeholder="Pesquise um cover, música ou artista"/>
+//                 </div>
+
+//                 <ul>
+//                     <li><FiPlusSquare/></li>
+//                     <li><FiBell/></li>
+//                     <li><FiUser/></li>
+//                 </ul>
+//             </div>
+//         </IconContext.Provider>
+//     </header>
+// );
+
+// export default Header;
