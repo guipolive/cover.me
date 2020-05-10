@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './styles.css';
+import {Link} from 'react-router-dom';
 
 import { FiMenu, FiPlusSquare, FiBell, FiUser, FiHome } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
@@ -19,7 +20,8 @@ export default class Header extends Component {
                     <div className="content">
                         <ul>
                             <li><FiMenu/></li>
-                            <li><FiHome/></li>
+                            <li><Link to="/"><FiHome/></Link></li>
+                            
                         </ul>
 
                         <div className="search-bar">

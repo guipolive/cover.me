@@ -12,7 +12,8 @@ import './styles.css';
 export default class Index extends Component {
     
     state = {
-        videoId: '_nBlN9yp9R8',
+        // videoId: '_nBlN9yp9R8',
+        videoId: 'h0AccW9Birk',
     }
 
     videoOnReady(event) {
@@ -38,17 +39,11 @@ export default class Index extends Component {
 
     return (
         <div className="app">
-            <ul>
-            <li>
-                <Link to="/">index</Link>
-            </li>
-        </ul>
 
 
         <div className="video-box">
             <YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady} className="video" ></YouTube>
         </div>
-        
         
         </div>
       );

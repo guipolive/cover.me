@@ -49,6 +49,7 @@ header .content div.search-bar input{
 .icones-header {
     width: 24px;
     height: 24px;
+    color: black;
 }
 
 .icones-header:hover {
