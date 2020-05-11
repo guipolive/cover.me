@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
 
 import './styles.css';
@@ -13,14 +13,22 @@ export default class Index extends Component {
     
     state = {
         // videoId: '_nBlN9yp9R8',
-        videoId: 'h0AccW9Birk',
+        videoId: '',
+    }
+
+    loadInfo(){
+        this.setState({videoId: this.props.match.params.music});
+    }
+
+    componentDidMount(){
+        this.loadInfo();
     }
 
     videoOnReady(event) {
         // access to player in all event handlers via event.target
         // event.target.pauseVideo();
         console.log(event.target);
-        }
+    }
 
     render(props) {
 
@@ -33,7 +41,7 @@ export default class Index extends Component {
             width: '30',
             playerVars: {
                 // https://developers.google.com/youtube/player_parameters
-                autoplay: 0,
+                autoplay: 1,
             },
         };
 
@@ -44,7 +52,7 @@ export default class Index extends Component {
         <div className="video-box">
             <YouTube videoId={videoId} opts={opts} onReady={this.videoOnReady} className="video" ></YouTube>
         </div>
-        
+
         </div>
       );
     }
