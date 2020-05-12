@@ -28,6 +28,8 @@ export default class Index extends Component {
         // access to player in all event handlers via event.target
         // event.target.pauseVideo();
         console.log(event.target);
+        const videoDur = event.target.getDuration();
+        console.log(videoDur);
     }
 
     render(props) {

@@ -4,9 +4,15 @@ const mongoosePaginate = require('mongoose-paginate'); // vai nos auxiliar na pa
 
 const CoverSchema = new mongoose.Schema({
     
-    musicId: {
-        type: String,
-        required: true
+    music: {
+        id: {type: mongoose.Schema.Types.ObjectId, ref: 'Music', required: true},
+        name: {type: String, required: true},
+        url: {type: Array, required: true},
+        videoId: {type: Array, required: true},
+        autor: {
+            id: {type: mongoose.Schema.Types.ObjectId, ref: 'Artist', required: false},
+            name: {type: String, required: true}
+        }
     },
 
     description: {
@@ -15,8 +21,8 @@ const CoverSchema = new mongoose.Schema({
     },
 
     coverArtist: {
-        type: String,
-        required: false
+        id: {type: mongoose.Schema.Types.ObjectId, ref: 'CoverArtist', required: false},
+        name: {type: String, required: false}
     },
 
     url: {
@@ -28,15 +34,6 @@ const CoverSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-
-    /* 
-
-    ifValidated: {
-        type: Boolean,
-        default: false
-    },
-
-     */
 });
 
 CoverSchema.plugin(mongoosePaginate); // aqui estamos colocando em uso o módulo que instalamos (mongoose-paginate), que está sendo utilizado no método find() no nosso arquivo controller

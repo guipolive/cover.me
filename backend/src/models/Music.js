@@ -8,13 +8,6 @@ const MusicSchema = new mongoose.Schema({
         required: true
     },
 
-    artistId: {
-        type: String,
-        required: true
-    },
-
-    
-
     albums: {
         type: Array,
         required: false
@@ -25,19 +18,21 @@ const MusicSchema = new mongoose.Schema({
         required: true
     },
 
+    videoId: {
+        type: String,
+        required: false
+    },
+
+    artist: {
+        id: {type: mongoose.Schema.Types.ObjectId, ref: 'Artist', required: true},
+        name: {type: String, required: false}
+    },
+    
     createdAt: {
         type: Date,
         default: Date.now
     }
 
-    /* 
-
-    ifValidated: {
-        type: Boolean,
-        default: false
-    },
-
-     */
 });
 
 MusicSchema.plugin(mongoosePaginate); // aqui estamos colocando em uso o módulo que instalamos (mongoose-paginate), que está sendo utilizado no método find() no nosso arquivo controller

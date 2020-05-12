@@ -49,9 +49,10 @@ export default class Index extends Component {
                     {musics.map(music => ( /* vai executar o que estiver dentro da função para cada entidade encontrada */
                     <article key={music._id}>
                         <strong>{music.name}</strong>
-                        <p>Música • {music.artistId} • Álbum • 4:58</p>
+                        {/* <p>Música • {music.artist.name} • Álbum • 4:58</p> */}
+                        <p>Música • {music.artist.name}</p>
 
-                        <Link to={`/musics/${music.url[0]}`} >Acessar</Link>
+                        <Link to={`/musics/${music.videoId}`} >Acessar</Link>
                     </article>
                     ))}
 
