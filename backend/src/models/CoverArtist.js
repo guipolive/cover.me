@@ -20,6 +20,6 @@ const CoverArtistSchema = new mongoose.Schema({
 
 });
 
-ArtistSchema.plugin(mongoosePaginate); // aqui estamos colocando em uso o módulo que instalamos (mongoose-paginate), que está sendo utilizado no método find() no nosso arquivo controller
+CoverArtistSchema.plugin(mongoosePaginate); // aqui estamos colocando em uso o módulo que instalamos (mongoose-paginate), que está sendo utilizado no método find() no nosso arquivo controller
 
 mongoose.model('CoverArtist', CoverArtistSchema);  // faz com que toda a plicação reconheça esse model pronto
