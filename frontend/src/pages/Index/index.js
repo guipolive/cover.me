@@ -62,7 +62,7 @@ export default class Index extends Component {
                         <strong>Andei Só</strong>
                         <p>Música • Natiruts • Álbum Aleatório • 4:58</p>
 
-                        <Link to={`/yt`} >Acessar</Link>
+                        <Link to={`/musics/1`} >Acessar</Link>
                     </article>
                     
                     <article>

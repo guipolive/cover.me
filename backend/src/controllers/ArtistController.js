@@ -16,6 +16,7 @@ module.exports = {
     },
 
     async store(req, res){
+        console.log('teste');
         const artist = await Artist.create(req.body); // aqui estamos criando uma nova entidade, que será igual à da requisição
 
         return res.json(artist);
