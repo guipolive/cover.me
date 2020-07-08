@@ -17,8 +17,9 @@ module.exports = {
     },
 
     async store(req, res){
-        const music = await Music.create(req.body); // aqui estamos criando uma nova entidade, que será igual à da requisição
+        const music = await Music.create(req.body); // aqui estamos criando uma nova música, que será igual à da requisição
 
+        // retornando os dados para exibição da música criada
         return res.json(music);
     },
 
