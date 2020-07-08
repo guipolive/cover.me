@@ -24,8 +24,15 @@ const MusicSchema = new mongoose.Schema({
     },
 
     artist: {
-        id: {type: mongoose.Schema.Types.ObjectId, ref: 'Artist', required: true},
-        name: {type: String, required: false}
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Artist',
+            required: true
+        },
+        name: {
+            type: String,
+            required: false
+        }
     },
     
     createdAt: {
