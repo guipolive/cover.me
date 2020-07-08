@@ -5,7 +5,9 @@ const mongoose = require("mongoose"); // importando o ORM mongoose
 const requireDir = require("require-dir"); // require-dir nos permite importar automaticamente algo em toda a aplicação
 // const {errors} = require('celebrate'); // tratamento de erros vindos da validação com o celebrate, feita nas rotas
 
-const atlas_url = require('../../safe/cover.me/atlas_url');
+const atlas_url = require('../../safe/cover.me/atlas_url.js');
+
+// console.log(atlas_url);
 
 // iniciando o app
 const app = express(); 
@@ -16,8 +18,14 @@ app.use(express.json());
 // fazendo uso do cors para que nossa aplicação possa ser acessada publicamente/ de outro domínio
 app.use(cors()); 
 
+mongoose.connect(atlas_url, {useNewUrlParser: true, useUnifiedTopology: true})
+  .then( () => {
+    console.log('Connection to the Atlas Cluster is successful!')
+  })
+  .catch( (err) => console.error(err));
+
 // conexão com o banco de dados ATLAS
-mongoose.connect(`${atlas_url}`, {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect(atlas_url, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // faz com que essa pasta seja importada automaticamente em toda a aplicação
 requireDir('./src/models'); 
