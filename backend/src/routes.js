@@ -8,10 +8,6 @@ const ArtistController = require('./controllers/ArtistController');
 // rotas de music
 routes.get('/musics', MusicController.index); // mostra tudo
 routes.post('/musics', MusicController.store); // cadastro 
-// routes.get('/entities/:id', EntityController.show); // mostra a entidade com o ID igual ao enviado por parâmetro
-// routes.delete('/entities/:id', EntityController.destroy); // deleta uma entidade baseado no ID enviado por parâmetro
-// routes.put('/entities/:id', EntityController.update); // faz update em uma entidade baseado no id enviado
-
 
 // rotas de artist
 routes.get('/artists', ArtistController.index); // mostra tudo
