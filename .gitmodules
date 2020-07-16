@@ -1,0 +1,6 @@
+[submodule "cm-backend"]
+	path = cm-backend
+	url = https://github.com/guipolive/c.m-backend.git
+[submodule "cm-frontend"]
+	path = cm-frontend
+	url = https://github.com/guipolive/c.m-frontend
